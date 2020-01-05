@@ -33,6 +33,7 @@ gem 'faker'
 gem 'bcrypt'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -55,6 +56,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'minitest'
+  gem 'minitest-reporters'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
