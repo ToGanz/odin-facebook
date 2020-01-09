@@ -18,6 +18,18 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response 401
   end
 
+  test "should redirect update when not logged in" do
+    patch user_registration_path(@user), params: { user: { name: @user.first_name,
+                                              email: @user.email } }
+    assert_response 401
+  end
+
+  # test "should redirect destroy when not logged in" do
+  #   assert_no_difference 'User.count' do
+  #     delete registration_path(@user)
+  #   end
+  # end
+
 	# test 'should redirect show when not logged in' do
 	# 	get user_path @user
 	# 	assert_redirected_to new_user_session_path

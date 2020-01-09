@@ -6,6 +6,8 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(first_name: "Example", last_name: "User",
                      email: "user@example.com", birthday: "05.08.1990",
                      password: "123456", password_confirmation: "123456")
+    @user1 = users(:michael)
+    @user2 = users(:archer)
   end
 
   test "should be valid" do
@@ -77,6 +79,27 @@ class UserTest < ActiveSupport::TestCase
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
+  end
+
+  test "should friend and unfriend a user" do
+    assert_not @user.friends.include?(@user1)
+    @user.friends << @user1
+    assert @user.friends.include?(@user1)
+    @user.save
+    assert @user1.friends.include?(@user)
+    @user.remove_friend(@user1)
+    assert_not @user.friends.include?(@user1)
+    @user.save
+    assert_not @user1.friends.include?(@user)
+  end
+
+  test "associated friendships should be destroyed" do
+    @user.save
+    @user.friendships.create!(friend_id: @user1.id)
+    # -2 because of inverse friendship
+    assert_difference 'Friendship.count', -2 do
+      @user.destroy
+    end
   end
 
 end
