@@ -39,7 +39,10 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'uglifier',     '3.2.0'
 gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
+# image uploads to Amazon S3
 gem 'carrierwave',  '1.2.2'
+gem 'fog',          '~>1.37.0'
+# image resizing
 gem 'mini_magick',  '4.7.0'
 
 gem 'rails_12factor', group: :production
@@ -56,7 +59,10 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem "letter_opener"
+  # preview emails
+  gem 'letter_opener'
+  # local ENV vars
+  gem 'figaro'
 end
 
 group :test do
