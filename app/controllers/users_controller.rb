@@ -7,5 +7,8 @@ class UsersController < ApplicationController
 
   def show
     #profile
+    @user = User.find(params[:id])
+    @posts = @user.posts.paginate(page: params[:page])
+    
   end
 end

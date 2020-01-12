@@ -1,20 +1,19 @@
-  
-<% if user_signed_in? %>
+  <% if user_signed_in? %>
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
-        <%#= render 'shared/user_info' %>
+        <%= render 'shared/user_info' %>
       </section>
       <section class="stats">
         <%#= render 'shared/stats' %>
       </section>
-      <section class="micropost_form">
-        <%#= render 'shared/micropost_form' %>
-      </section>
     </aside>
     <div class="col-md-8">
+      <section class="post_form">
+        <%= render 'shared/post_form' %>
+      </section>
       <h3>Feed</h3>
-      <%#= render 'shared/feed' %>
+      <%= render 'shared/feed' %>
     </div>
   </div>
 <% else %>

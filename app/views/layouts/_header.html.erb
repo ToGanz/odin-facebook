@@ -6,6 +6,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "Home", root_path %></li>
         <% if user_signed_in? %>
+          <li><%= link_to pluralize(current_user.pending_friends.count, "Friendrequest"), friend_requests_path %></li>
           <li><%= link_to "Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>

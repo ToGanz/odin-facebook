@@ -41,7 +41,7 @@ gem 'coffee-rails', '4.2.2'
 gem 'jquery-rails', '4.3.1'
 # image uploads to Amazon S3
 gem 'carrierwave',  '1.2.2'
-gem 'fog',          '~>1.37.0'
+gem 'fog',          '~>1.37.0', group: :production
 # image resizing
 gem 'mini_magick',  '4.7.0'
 

@@ -1,0 +1,39 @@
+  <% provide(:title, 'Friendrequests') %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= pluralize(current_user.pending_friends.count, "Friendrequest") %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h1>Friendrequests</h1>
+      <% if @incoming.any? %>
+        <section class="incoming">
+          <h2><%= pluralize(@incoming.count, "Friendrequest") %></h2>
+          <% @incoming.each do |request| %>
+            <ul>
+              <li><%= "#{request.user.first_name} #{request.user.last_name}" %></li>
+              <li><%= link_to "accept", request, method: :patch %></li>
+              <li><%= link_to "delete", request, method: :delete,
+                                  data: { confirm: "You sure?" } %></li>
+            </ul>
+          <% end %>
+        </section>
+      <% end %>
+      <% if @outgoing.any? %>
+        <section class="outgoing">
+          <h2><%= pluralize(@outgoing.count, "Friendrequest") %></h2>
+          <% @outgoing.each do |request| %>
+            <ul>
+              <li><%= "#{request.friend.first_name} #{request.friend.last_name}" %></li>
+              <li><%= link_to "delete", request, method: :patch,
+                                  data: { confirm: "You sure?" } %></li>
+            </ul>
+          <% end %>
+        </section>
+      <% end %>
+    </div>
+  </div>
