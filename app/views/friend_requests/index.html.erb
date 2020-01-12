@@ -4,15 +4,12 @@
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
-      <section class="stats">
-        <%= pluralize(current_user.pending_friends.count, "Friendrequest") %>
-      </section>
     </aside>
     <div class="col-md-8">
       <h1>Friendrequests</h1>
       <% if @incoming.any? %>
         <section class="incoming">
-          <h2><%= pluralize(@incoming.count, "Friendrequest") %></h2>
+          <h2><%= pluralize(@incoming.count, "Friendrequest") %> received.</h2>
           <% @incoming.each do |request| %>
             <ul>
               <li><%= "#{request.user.first_name} #{request.user.last_name}" %></li>
@@ -25,11 +22,11 @@
       <% end %>
       <% if @outgoing.any? %>
         <section class="outgoing">
-          <h2><%= pluralize(@outgoing.count, "Friendrequest") %></h2>
+          <h2><%= pluralize(@outgoing.count, "Friendrequest") %> sent.</h2>
           <% @outgoing.each do |request| %>
             <ul>
               <li><%= "#{request.friend.first_name} #{request.friend.last_name}" %></li>
-              <li><%= link_to "delete", request, method: :patch,
+              <li><%= link_to "delete", request, method: :delete,
                                   data: { confirm: "You sure?" } %></li>
             </ul>
           <% end %>

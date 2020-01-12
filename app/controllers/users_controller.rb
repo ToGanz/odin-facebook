@@ -2,11 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    #feed
+    @users = User.all#.paginate(page: params[:page])
   end
 
   def show
-    #profile
     @user = User.find(params[:id])
     @posts = @user.posts.paginate(page: params[:page])
     

@@ -3,7 +3,7 @@ class FriendRequestsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @incoming = FriendRequest.where(friend: current_user)
+    @incoming = incoming_friend_requests
     @outgoing = current_user.friend_requests
   end
 
@@ -35,4 +35,5 @@ class FriendRequestsController < ApplicationController
   def set_friend_request
     @friend_request = FriendRequest.find(params[:id])
   end
+
 end
