@@ -2,7 +2,7 @@
 This is the final project of the Ruby on Rails part from the curriculum of The Odin Project.
 https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project?ref=lnav
 
-This project contains the core pieces of facebook, which include – users, profiles, “friending”, posts, news feed, and “liking”. The sign-in is implemented by using Omniauth and Devise.
+This project contains the core pieces of facebook, which include – users, profiles, “friending”, posts, news feed, and “liking”. The sign-in is implemented by using Devise.
 
 ###  The main takeaways of this app were:
  - authenticaion with the devise gem
@@ -12,8 +12,10 @@ The app isn't finished yet.
 ## TODO's:
 
 - image in production doesnt work (probably s3 settings for privacy)
+- Integration Tests
 - adding the "liking" functionality
-- 
+- Omniauth sign.in with real facebook
+- feed with post from friends
 
 
 
