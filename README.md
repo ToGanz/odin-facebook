@@ -14,7 +14,7 @@ The app isn't finished yet.
 - image in production doesnt work (probably s3 settings for privacy)
 - Integration Tests
 - adding the "liking" functionality
-- feed with post from friends
+- adding the "commenting" functionality
 
 
 
