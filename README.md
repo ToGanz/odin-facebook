@@ -5,7 +5,7 @@ https://www.theodinproject.com/courses/ruby-on-rails/lessons/final-project?ref=l
 This project contains the core pieces of facebook, which include – users, profiles, “friending”, posts, news feed, and “liking”. The sign-in is implemented by using Devise.
 
 ###  The main takeaways of this app were:
- - authenticaion with the devise gem
+ - authenticaion with the devise gem and omniauth
  - associations for the friendship model
 
 The app isn't finished yet. 
@@ -14,7 +14,6 @@ The app isn't finished yet.
 - image in production doesnt work (probably s3 settings for privacy)
 - Integration Tests
 - adding the "liking" functionality
-- Omniauth sign.in with real facebook
 - feed with post from friends
 
 

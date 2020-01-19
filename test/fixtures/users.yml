@@ -18,3 +18,10 @@ archer:
   birthday: 05.08.1990
   email: duchess@example.gov
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+
+lana:
+  first_name: Lana
+  last_name: Banana
+  birthday: 01.09.1996
+  email: lana@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>

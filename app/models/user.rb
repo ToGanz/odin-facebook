@@ -17,8 +17,13 @@ class User < ApplicationRecord
   has_many :friends, through: :friendships
   has_many :posts, dependent: :destroy
 
+  # Returns a user's status feed.
+
   def feed
-    Post.where("user_id = ?", id)
+    friend_ids = "SELECT friend_id FROM friendships
+                     WHERE  user_id = :user_id"
+    Post.where("user_id IN (#{friend_ids})
+                     OR user_id = :user_id", user_id: id)
   end
 
   def remove_friend(friend)
