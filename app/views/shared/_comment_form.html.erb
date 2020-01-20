@@ -1,0 +1,8 @@
+<%= form_for(@comment) do |f| %>
+  <%= render 'devise/shared/error_messages', resource: f.object %>
+  <%= f.hidden_field(:post_id, value: post.id) %>
+  <div class="field">
+    <%= f.text_area :content, placeholder: "Comment on post..." %>
+  </div>
+  <%= f.submit "Comment", class: "btn btn-primary" %>
+<% end %>
