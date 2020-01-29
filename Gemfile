@@ -46,6 +46,8 @@ gem 'fog',          '~>1.37.0', group: :production
 # image resizing
 gem 'mini_magick',  '4.7.0'
 
+gem "font-awesome-rails"
+
 gem 'rails_12factor', group: :production
 
 group :development, :test do

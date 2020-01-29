@@ -4,6 +4,9 @@
   <br>
   <%= image_tag post.image.url if post.image? %>
   <span class="content"><%= post.content %></span>
+  <div class="post-actions">
+    <i class="fa fa-thumbs-up fa-2x text-muted post-comment"></i>
+  </div>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user == post.user %>
