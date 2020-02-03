@@ -11,10 +11,10 @@ This project contains the core pieces of facebook, which include – users, prof
 The app isn't finished yet. 
 ## TODO's:
 
-- image in production doesnt work (probably s3 settings for privacy)
+- image in production doesnt work (s3 settings for privacy)
 - Integration Tests
-- adding the "liking" functionality
 - adding the "commenting" functionality
+- css styling
 
 
 

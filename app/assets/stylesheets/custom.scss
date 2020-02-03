@@ -227,6 +227,29 @@ input {
 .btn {
   background-color: #3b5998;
 }
+
+.submit-post {
+  //border: none;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  float: left;
+  width: 60px;
+}
+
+.submit-text {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+  outline: inherit;
+  float: left;
+  width: 30px;
+  margin-left: 55px;
+}
 /* Users index */
 
 .users {

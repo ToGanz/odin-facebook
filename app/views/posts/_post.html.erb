@@ -6,17 +6,19 @@
   <span class="content"><%= post.content %></span>
   <div class="post-actions">
     <i class="fa fa-thumbs-up fa-2x text-muted post-comment"></i>
-    <%= pluralize(post.total_likes_count, "like") %>
+    <span><%= pluralize(post.total_likes_count, "like") %></span>
     <% if post.likes.find_by(user_id: current_user.id) %>
+      <br>
       <%= link_to "Unlike", post.likes.find_by(user_id: current_user.id), method: :delete,
-                                       data: { confirm: "You sure?" } %>
+                                       data: { confirm: "You sure?" }, class: "submit-text" %>
     <% else %>
-      <%= form_tag likes_path, method: :post, class: "float-right" do %>
+      <%= form_tag likes_path, method: :post do %>
         <%= hidden_field_tag :post_id, post.id %>
-        <%= submit_tag "Like" %>
+        <%= submit_tag "Like", class: "submit-text" %>
       <% end %>
     <% end %>
   </div>
+  <br>
   <span class="timestamp">
     Posted <%= time_ago_in_words(post.created_at) %> ago.
     <% if current_user == post.user %>
@@ -24,4 +26,12 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <div class="comment-box">
+    <%= form_for @comment do |f| %>
+      <%= f.hidden_field :post_id, value: post.id %>
+      <%= f.text_field :content, placeholder: "Add comment here..."%>
+      <%= f.submit "Post", class: "btn submit-post" %>
+    <% end %>
+    <br>
+  </div>
 </li>

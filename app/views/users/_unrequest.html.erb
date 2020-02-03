@@ -1,5 +1,5 @@
 <%= form_for(current_user.friend_requests.find_by(friend_id: object.id), 
 						 html: { method: :delete },
 						 remote: true) do |f| %>
-	<%= f.submit 'Cancel request', class: 'btn btn-primary' %>
+	<%= f.submit 'Cancel request', class: 'submit-text' %>
 <% end %>
