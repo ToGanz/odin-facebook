@@ -26,6 +26,9 @@
                                        data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  
+  <%= render "posts/comments", post: post %>
+
   <div class="comment-box">
     <%= form_for @comment do |f| %>
       <%= f.hidden_field :post_id, value: post.id %>
