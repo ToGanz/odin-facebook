@@ -13,7 +13,6 @@ The app isn't finished yet.
 
 - image in production doesnt work (s3 settings for privacy)
 - Integration Tests
-- adding the "commenting" functionality
 - css styling
 
 
